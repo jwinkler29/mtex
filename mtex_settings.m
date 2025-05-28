@@ -182,7 +182,7 @@ setMTEXpref('insidepoly',true)
 % symbols
 
 % by default turn LaTeX on only on Windows or Mac
-setMTEXpref('textInterpreter','LaTeX');
+setMTEXpref('textInterpreter','Tex');
 
 %% available memory
 % change this value to specify the total amount of free ram

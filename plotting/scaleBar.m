@@ -142,7 +142,8 @@ methods
     % We do this so that we never display 10000 nm and always something like
     % 10 microns. Also, the correct choice of units will avoid decimals.
     [sBLength, sBUnit, factor] = switchUnit(0.1*abs(diff(dx)), sB.scanUnit);
-    if strcmpi(sBUnit,'um'), sBUnit = '$\mu$m';end
+%this was adjusted to control plotting the ScaleBar.text in a specified font
+    if strcmpi(sBUnit,'um'), sBUnit = 'µm';end
     
     % we would like to have SBlength beeing a nice number
     if isnan(sB.length)
@@ -177,7 +178,8 @@ methods
       'LineWidth', 1, 'FaceAlpha', sB.backgroundAlpha);
     
     % update text
-    set(sB.txt,'string',['\rm{\textbf{' num2str(sB.length) ' ' sBUnit '}}'],...
+%this was adjusted to plot the sB.txt in the font Calibri
+    set(sB.txt,'string',['\fontname{Calibri}{\bf{' num2str(sB.length) ' ' sBUnit '}}'],...
       'HorizontalAlignment', 'Center',...
       'VerticalAlignment', 'baseline','color',sB.lineColor,...
       'Position', cP([boxx+boxWidth/2,boxy+3*gapY]));
